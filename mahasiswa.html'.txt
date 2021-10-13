@@ -1,0 +1,32 @@
+MariaDB [(none)]> show databases; //digunakan untuk melihat database
+
+MariaDB [(none)]> create database akademik; //digunakan untuk membuat database bernama "akademik"
+
+MariaDB [(none)]> use akademik; //digunakan untuk memakai/memilih database "akademik"
+
+MariaDB [akademik]> create table mahasiswa (  //membuat tabel mahasiswa
+    -> nim varchar(5) not null,  //deklarasi variabel nim bertipe data varchar
+    -> nama varchar(50) not null, //deklarasi variabel nama bertipe data varchar
+    -> jkel varchar(1) not null, //deklarasi variabel jenis kelamin bertipe data varchar
+    -> alamat text, //deklarasi variabel alamat bertipe data teks (agar dapat memuat banyak)
+    -> tgllhr date, //deklarasi variabel date bertipe data date (tgl - bulan - tahun)
+    -> primary key(nim) //nim dijadikan sebagai primary key
+    -> );
+
+/*
+	Menambahkan 4 nilai kepada tabel mahasiswa
+*/
+
+MariaDB [akademik]> insert into mahasiswa values ('MHS01', 'Siti Aminah', 'P', 'SOLO', '1995-10-01');
+
+MariaDB [akademik]> insert into mahasiswa values ('MHS03', 'Amirudin', 'L', 'SEMARANG', '1998-08-11');
+
+MariaDB [akademik]> insert into mahasiswa values ('MHS03', 'Amirudin', 'L', 'SEMARANG', '1998-08-11');
+
+MariaDB [akademik]> insert into mahasiswa values ('MHS04', 'Siti Maryam', 'P', 'JAKARTA', '1995-04-15');
+
+
+MariaDB [akademik]> select * from mahasiswa; //digunakan untuk memilih data "mahasiswa" untuk ditampilkan
+
+
+MariaDB [akademik]> select * from mahasiswa where alamat = 'SOLO'; //digunakan untuk memilih data "mahasiswa" dengan filter beralamat di "SOLO" untuk ditampilkan
